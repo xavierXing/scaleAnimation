@@ -27,16 +27,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OG-Sq-rkv">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_img_head_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="skO-Dw-KNI">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_img_head_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="skO-Dw-KNI">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="skO-Dw-KNI" secondAttribute="bottom" id="9hP-GS-YmF"/>
-                                                    <constraint firstItem="skO-Dw-KNI" firstAttribute="leading" secondItem="1OG-Sq-rkv" secondAttribute="leading" id="Hxc-n7-cLp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="skO-Dw-KNI" secondAttribute="trailing" id="RDg-Yc-Uyx"/>
-                                                    <constraint firstItem="skO-Dw-KNI" firstAttribute="top" secondItem="1OG-Sq-rkv" secondAttribute="top" id="Yiz-i4-cZD"/>
+                                                    <constraint firstItem="skO-Dw-KNI" firstAttribute="top" secondItem="1OG-Sq-rkv" secondAttribute="top" id="Jzh-gS-wFo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="skO-Dw-KNI" secondAttribute="bottom" id="Klw-64-Tzj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="skO-Dw-KNI" secondAttribute="trailing" id="XhV-zO-MnA"/>
+                                                    <constraint firstItem="skO-Dw-KNI" firstAttribute="leading" secondItem="1OG-Sq-rkv" secondAttribute="leading" id="ZrN-fk-yeo"/>
                                                     <constraint firstAttribute="height" constant="224" id="pbt-Gj-ubr"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -75,13 +75,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="contentScrollowView" destination="Bb7-Wt-tPL" id="FIR-cg-lsK"/>
                         <outlet property="contentView" destination="1OG-Sq-rkv" id="jB8-VG-cah"/>
                         <outlet property="headerImg" destination="skO-Dw-KNI" id="Tna-BY-XWN"/>
+                        <outlet property="offset" destination="pbt-Gj-ubr" id="yQW-1U-wGx"/>
+                        <outlet property="top" destination="8uj-Gl-Q07" id="R7v-7P-bIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48.799999999999997" y="115.59220389805098"/>
+            <point key="canvasLocation" x="148" y="88.605697151424295"/>
         </scene>
     </scenes>
     <resources>

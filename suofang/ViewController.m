@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImg;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *offset;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollowView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 
 @end
 
@@ -20,11 +23,12 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+//  self.contentScrollowView.contentInsetAdjustmentBehavior = UIApplicationBackgroundFetchIntervalNever;
   
   CABasicAnimation *animation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
   animation.fromValue=[NSNumber numberWithFloat:1.2];
   animation.toValue=[NSNumber numberWithFloat:1];
-  animation.duration=3.0;
+  animation.duration=1.0;
   animation.autoreverses=NO;
   animation.repeatCount=0;
   animation.removedOnCompletion=NO;
@@ -43,17 +47,14 @@
 
 }
 
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
   if (scrollView.contentOffset.y < 0) {
-    CGRect frame = self.headerImg.frame;
-    frame.size.width = (224.0 - scrollView.contentOffset.y) * (self.view.frame.size.width / 224.0);
-    frame.size.height = 224.0 - scrollView.contentOffset.y;
-    frame.origin.x = scrollView.contentOffset.y;
-    frame.origin.y = scrollView.contentOffset.y;
-    self.headerImg.frame = frame;
-   
+    self.offset.constant = 224.0 - scrollView.contentOffset.y;
+    self.top.constant = scrollView.contentOffset.y;
+    self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, scrollView.contentOffset.y, self.contentView.frame.size.width, self.contentView.frame.size.width);
+    
+
   }
 }
 
